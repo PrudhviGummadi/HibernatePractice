@@ -10,8 +10,14 @@ public interface StudentDAO {
 
 	public abstract List<Student> getAllStudents();
 
-	public abstract void deleteStudent(int id);
+	public abstract Student getStudentById(int id);
+
+	public abstract void deleteAllStudentsByFirstName(String firstname);
+
+	public abstract void deleteById(int id);
 
 	public abstract void updateStudent(Student student);
+
+	public abstract void updateStudent(int id, String section);
 
 }

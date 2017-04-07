@@ -2,6 +2,7 @@ package com.hibernate.practice.model;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -21,11 +22,25 @@ public class Student implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 
+	@Column(name = "firstname", nullable = false)
 	private String firstname;
 
+	@Column(name = "lastname", nullable = false)
 	private String lastname;
 
+	@Column(name = "section", nullable = false)
 	private String section;
+
+	public Student() {
+
+	}
+
+	public Student(String firstname, String lastname, String section) {
+		super();
+		this.firstname = firstname;
+		this.lastname = lastname;
+		this.section = section;
+	}
 
 	public int getId() {
 		return id;

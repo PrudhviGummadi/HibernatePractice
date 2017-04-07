@@ -18,6 +18,8 @@ public interface StudentDAO {
 
 	public abstract void updateStudent(Student student);
 
+	public abstract void mergeStudent(int id, Student student);
+
 	public abstract void updateStudent(int id, String section);
 
 }

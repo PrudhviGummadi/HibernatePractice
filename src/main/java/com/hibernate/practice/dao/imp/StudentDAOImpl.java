@@ -84,4 +84,21 @@ public class StudentDAOImpl implements StudentDAO {
 		return (Student) query.getSingleResult();
 	}
 
+	// At first look both update() and merge() methods seems similar because
+	// both of them are used to convert the object which is in detached state
+	// into persistence state, but the major difference between update and merge
+	// is that update method cannot be used when the same object exists in the
+	// session. Let’s look at those difference with simple example.
+	@Override
+	public void mergeStudent(int id, Student mergeStudent) {
+		session.beginTransaction();
+		Student student = session.get(Student.class, id);
+		System.out.println("Before merging the student: " + student);
+		// This will throwing org.hibernate.NonUniqueObjectException
+		// session.update(mergeStudent);
+		session.merge(mergeStudent);
+		System.out.println("After merging the student: " + mergeStudent);
+		session.getTransaction().commit();
+	}
+
 }

@@ -46,6 +46,15 @@ public class HibernatStandAlone {
 			student = studentDao.getStudentById(id);
 			System.out.println("Student after updated: " + student);
 
+			Student student4 = new Student();
+			student4.setId(id);
+			student4.setFirstname("merged_user");
+			student4.setLastname("merged_lastname");
+			student4.setSection("D");
+			studentDao.mergeStudent(id, student4);
+
+			System.out.println("Student after the merge operation instead of update: " + student);
+
 			// Delete all Students from student table with given firstName
 			studentDao.deleteAllStudentsByFirstName("test2");
 
@@ -54,6 +63,7 @@ public class HibernatStandAlone {
 
 			// Just to remove the inserted data
 			// studentDao.deleteAllStudentsByFirstName("test");
+			studentDao.deleteAllStudentsByFirstName("test");
 			studentDao.deleteAllStudentsByFirstName("test3");
 
 			// Fetching the list of students after delete operations

@@ -1,4 +1,4 @@
-package com.hibernate.practice.dao.imp;
+package com.hibernate.practice.dao.impl;
 
 import java.util.List;
 

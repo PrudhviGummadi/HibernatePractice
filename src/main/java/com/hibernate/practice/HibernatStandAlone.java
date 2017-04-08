@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.hibernate.practice.config.HibernateUtils;
 import com.hibernate.practice.dao.StudentDAO;
-import com.hibernate.practice.dao.imp.StudentDAOImpl;
+import com.hibernate.practice.dao.impl.StudentDAOImpl;
 import com.hibernate.practice.model.Student;
 
 public class HibernatStandAlone {

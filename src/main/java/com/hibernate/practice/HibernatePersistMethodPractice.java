@@ -5,34 +5,32 @@ import com.hibernate.practice.dao.HibernateSessionMethodDAO;
 import com.hibernate.practice.dao.impl.HibernateSessionMethodDAOImpl;
 import com.hibernate.practice.model.Student;
 
-public class HibernatSaveMethodPractice {
-
+public class HibernatePersistMethodPractice {
 	public static void main(String[] args) {
 		try {
-			Student student = new Student("test_first", "test_last", "A");
+			Student student = new Student("first_persist", "last_persist", "A");
 
 			HibernateSessionMethodDAO studentDao = new HibernateSessionMethodDAOImpl();
 
-			// Saving the student using the save method in session without
-			// transaction
-			System.out.println("Saving the student with given user details: " + student);
-			int id = studentDao.saveStudent(student);
+			// persisting the object in DB
+			System.out.println("Student Details: " + student);
+			int id = studentDao.persistStudent(student);
 
 			System.out.println(
 					"******************************************************************************************************");
 
-			Student student2 = new Student("test2", "test2_last", "B");
-			System.out.println("Saving the student with given user details: " + student2);
-			studentDao.saveStudentWithTransaction(student2);
+			// Fetching the details from DB
+			System.out.println("Fetching the Details from DB for student with id: " + id);
+			studentDao.getStudent(id);
 
 			System.out.println(
 					"******************************************************************************************************");
 
-			// deleting the saved data
-			// studentDao.removeStudent(id);
+			// removing the inserted data from DB
+			studentDao.removeStudent(id);
+
 		} finally {
 			HibernateUtils.closeSessionFactory();
 		}
-
 	}
 }

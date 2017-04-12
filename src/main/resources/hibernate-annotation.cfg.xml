@@ -15,5 +15,13 @@
     <property name="hibernate.current_session_context_class">thread</property>
     <property name="show_sql">true</property>
     <property name="format_sql">false</property>
+    
+    <mapping class="com.hibernate.practice.model.Student"/>
+    <mapping class="com.hibernate.practice.model.Transaction"/>
+    <mapping class="com.hibernate.practice.model.Department"/>
+    <mapping class="com.hibernate.practice.model.Customer"/>
+    <mapping class="com.hibernate.practice.model.University"/>
+    
+    
   </session-factory>
 </hibernate-configuration>

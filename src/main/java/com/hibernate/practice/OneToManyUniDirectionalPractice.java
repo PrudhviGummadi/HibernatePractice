@@ -14,7 +14,6 @@ public class OneToManyUniDirectionalPractice {
       university.setName("VIT University");
 
       Department dept1 = new Department("ECE Department", university);
-      Department dept2 = new Department("CS Department", university);
 
       Session session = HibernateUtils.getSessionFactory().openSession();
 
@@ -33,7 +32,7 @@ public class OneToManyUniDirectionalPractice {
       System.out.println("Details fetched from DB are: " + dept1);
 
       // removing the inserted data
-      // session.remove(dept1);
+      session.remove(dept1);
 
     } finally {
       HibernateUtils.closeSessionFactory();

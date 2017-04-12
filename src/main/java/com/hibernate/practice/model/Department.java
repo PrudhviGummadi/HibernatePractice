@@ -15,6 +15,9 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "DEPARTMENT")
+// This is the many side class. Usually many side class will be the one which can't exist with the other end
+// class such as parent class here University class and also we will use @ManyToOne annotation on the Parent
+// object instance in child class. Like which I did on University Instance.
 public class Department implements Serializable {
 
   /**

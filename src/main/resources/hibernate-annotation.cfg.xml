@@ -6,24 +6,31 @@
 <!-- "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd" -->
 
 <hibernate-configuration>
-  <session-factory>
-    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
-    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-    <property name="hibernate.connection.username">root</property>
-    <property name="hibernate.connection.password">root</property>
-    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/hibernatepractice</property>
-    <property name="hibernate.current_session_context_class">thread</property>
-    <property name="show_sql">true</property>
-    <property name="format_sql">false</property>
-    
-    <mapping class="com.hibernate.practice.model.Student"/>
-    <mapping class="com.hibernate.practice.model.Transaction"/>
-    <mapping class="com.hibernate.practice.model.Department"/>
-    <mapping class="com.hibernate.practice.model.Customer"/>
-    <mapping class="com.hibernate.practice.model.University"/>
-    <mapping class="com.hibernate.practice.model.Book"/>
-    <mapping class="com.hibernate.practice.model.Author"/>
-    
-    
-  </session-factory>
+	<session-factory>
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="hibernate.connection.username">root</property>
+		<property name="hibernate.connection.password">root</property>
+		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/hibernatepractice</property>
+		<property name="hibernate.current_session_context_class">thread</property>
+		<property name="show_sql">true</property>
+		<property name="format_sql">false</property>
+		<property name="hibernate.id.new_generator_mappings">false</property>
+
+		<mapping class="com.hibernate.practice.model.Student" />
+		<mapping class="com.hibernate.practice.model.Transaction" />
+		<mapping class="com.hibernate.practice.model.Department" />
+		<mapping class="com.hibernate.practice.model.Customer" />
+		<mapping class="com.hibernate.practice.model.University" />
+		<mapping class="com.hibernate.practice.model.Book" />
+		<mapping class="com.hibernate.practice.model.Author" />
+		<mapping class="com.hibernate.practice.model.Employee" />
+		<mapping class="com.hibernate.practice.model.RegularEmployee" />
+		<mapping class="com.hibernate.practice.model.ContractEmployee" />
+<!-- 		<mapping class="com.hibernate.practice.model.Employee1" /> -->
+<!-- 		<mapping class="com.hibernate.practice.model.RegularEmployee1" /> -->
+<!-- 		<mapping class="com.hibernate.practice.model.ContractEmployee1" /> -->
+
+
+	</session-factory>
 </hibernate-configuration>

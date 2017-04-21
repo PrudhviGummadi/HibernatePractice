@@ -14,6 +14,7 @@ public class HibernateUtils {
       sessionFactory = configuration.buildSessionFactory();
     } catch (Throwable ex) {
       System.err.println("Unable to create the session factory");
+      ex.printStackTrace();
       throw new ExceptionInInitializerError(ex);
     }
 

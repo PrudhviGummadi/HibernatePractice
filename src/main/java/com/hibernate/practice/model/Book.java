@@ -22,6 +22,7 @@ public class Book implements Serializable {
 
   private String name;
 
+
   private String description;
 
   // private Set<Author> authors;
@@ -75,6 +76,9 @@ public class Book implements Serializable {
     this.name = name;
   }
 
+  // In hibernate we cannot insert data into column if it has column name has 'desc'. we need to handle it
+  // specially by mentioning column(name="[DESC]"). See how i added square brackets for the column it should
+  // be then if column name is desc otherwise we dont need to worry
   @Column(name = "description", nullable = false)
   public String getDesc() {
     return description;
